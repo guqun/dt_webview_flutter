@@ -1,4 +1,4 @@
-## 0.0.2
+## 0.0.3
 
 * Fix a bug where `allowsInlineMediaPlayback` is not respected on iOS.
 

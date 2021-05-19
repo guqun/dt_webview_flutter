@@ -1,0 +1,6 @@
+module dt_webview_flutter {
+  umbrella header "dt_webview_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}
