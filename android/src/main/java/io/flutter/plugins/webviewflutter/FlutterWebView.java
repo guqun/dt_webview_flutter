@@ -21,6 +21,7 @@ import android.provider.MediaStore;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.webkit.GeolocationPermissions;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -105,6 +106,12 @@ public class FlutterWebView implements PlatformView, MethodCallHandler{
       resultMsg.sendToTarget();
 
       return true;
+    }
+
+    @Override
+    public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+//      super.onGeolocationPermissionsShowPrompt(origin, callback);
+      callback.invoke(origin, true, true);
     }
 
     @Override
@@ -704,4 +711,6 @@ public class FlutterWebView implements PlatformView, MethodCallHandler{
     uploadMessageAboveL.onReceiveValue(results);
     uploadMessageAboveL = null;
   }
+
+
 }
